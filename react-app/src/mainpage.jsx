@@ -11,7 +11,7 @@ function Mainpage(){
                 <i className="fas fa-search"></i>
             </div>
             </nav>
-            <Book />
+            <Book/>
         </div>
         </>
     )

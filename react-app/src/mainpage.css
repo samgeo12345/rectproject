@@ -60,8 +60,13 @@
     gap:5px;
     align-items:left;
 }
+.bookdiv .bookcontentsdiv .see{
+    text-decoration:none;
+    color:dodgerblue;
+}
 .bookdiv .bookcontentsdiv .rated{
     color:orange;
+    line-height:0%;
 }
 .bookdiv .bookcontentsdiv button{
     padding:3% 6%;

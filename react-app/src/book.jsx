@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import {Link} from 'react-router-dom';
 import axios from "axios";
 import './mainpage.css'
 function Book(){
@@ -6,12 +7,9 @@ function Book(){
 
   useEffect(() => {
     axios
-      .get("https://fakestoreapi.in/api/products")
-      .then(res => res.json())
+      .get("https://dummyjson.com/products")
       .then((result) => {
-        if(result.status==="SUCCESS" && Array.isArray(result.products)){
-          setProduct(result.products);
-        } 
+          setProduct(result.data.products);
       })
       .catch((e) => {
         console.error("Error Fetching ", e);
@@ -24,7 +22,7 @@ function Book(){
     <div className="bookdiv">
         { product.map((p)=>(
           <div className="bookcontentsdiv" key={p.id}>
-            <img src={p.image[0]} alt="" />
+            <img src={p.images[0]} alt="" />
             <h3>{p.title}</h3>
             <p>Rating ({p.rating})
               <div>
@@ -36,6 +34,7 @@ function Book(){
               </div>
             </p>
             <h3>₹ {p.price}</h3>
+            <Link to={`/pro/${p.id}`} className="see">See details</Link>
             <button>Order now</button>
           </div>
         ))}

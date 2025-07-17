@@ -28,7 +28,7 @@ function App() {
         <Register/>
         </>
       }/>
-      <Route path='/pro' element={
+      <Route path='/pro/:id' element={
         <>
         <Pro/>
         </>
